@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     var countries = [String]()
     var score = 0
+    var correctAnswer = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,9 @@ class ViewController: UIViewController {
 
 
     func askQuestion(){
+        countries.shuffle() // shuffle() for in-place shuffling, shuffled() to return a new, shuffled array
+        correctAnswer = Int.random(in: 0...2)
+        
         button1.setImage(UIImage(named: countries[0]), for: .normal)
         button2.setImage(UIImage(named: countries[1]), for: .normal)
         button3.setImage(UIImage(named: countries[2]), for: .normal)
@@ -66,6 +70,8 @@ class ViewController: UIViewController {
          for: .normal The setImage() method takes a second parameter that describes which state of the button should be changed. We're specifying .normal, which means "the standard state of the button."
          That .normal parameter looks like an enum, but it’s actually a static property of a struct called UIControlState.  if you want to be technically correct it’s not a true enum in Swift.
          */
+        
+        title = countries[correctAnswer].uppercased()
     }
 }
 
