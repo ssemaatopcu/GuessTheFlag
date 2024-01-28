@@ -54,11 +54,11 @@ class ViewController: UIViewController {
          You need to specify four values: red, green, blue and alpha, each of which should range from 0 (none of that color) to 1.0 (all of that color). The code above generates an orange color, then converts it to a CGColor so it can be assigned to a CALayer's borderColor property.
          */
         
-        askQuestion()
+        askQuestion(action: nil)
     }
 
 
-    func askQuestion(){
+    func askQuestion(action: UIAlertAction!){
         countries.shuffle() // shuffle() for in-place shuffling, shuffled() to return a new, shuffled array
         correctAnswer = Int.random(in: 0...2)
         
@@ -72,6 +72,33 @@ class ViewController: UIViewController {
          */
         
         title = countries[correctAnswer].uppercased()
+ 
+}
+    
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        var title: String
+        
+        if sender.tag == correctAnswer{
+            title = "Correct"
+            score += 1
+        } else {
+            title = "Wrong"
+            score -= 1
+        }
+        
+        let ac = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+        present(ac, animated: true)
+        
+        /*
+         The first line uses .alert, which pops up a message box over the center of the screen, and .actionSheet, which slides options up from the bottom. They are similar, but Apple recommends you use .alert when telling users about a situation change, and .actionSheet when asking them to choose from a set of options.
+         The second line uses the UIAlertAction data type to add a button to the alert that says "Continue", and gives it the style “default". There are three possible styles: .default, .cancel, and .destructive. The handler parameter is looking for a closure, which is some code that it can execute when the button is tapped. You can write custom code in there if you want, but in our case we want the game to continue when the button is tapped, so we pass in askQuestion so that iOS will call our askQuestion() method.
+         The final line calls present(), which takes two parameters: a view controller to present and whether to animate the presentation. It has an optional third parameter that is another closure that should be executed when the presentation animation has finished, but we don’t need it here. We send our UIAlertController for the first parameter, and true for the second because animation is always nice.
+
+
+         */
     }
+    
 }
 
