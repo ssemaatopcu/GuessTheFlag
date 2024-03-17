@@ -18,6 +18,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-BK-RHj">
                                 <rect key="frame" x="84.666666666666686" y="100" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hZE-BK-RHj" secondAttribute="height" multiplier="112:57" id="INg-Bv-Mfz"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="turkey"/>
                                 <connections>
@@ -26,6 +29,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTQ-Jb-ati">
                                 <rect key="frame" x="84.666666666666686" y="244" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HTQ-Jb-ati" secondAttribute="height" multiplier="112:57" id="XRs-xm-fti"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="turkey"/>
                                 <connections>
@@ -34,6 +40,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGQ-ay-Iwo">
                                 <rect key="frame" x="84.666666666666686" y="388" width="224" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OGQ-ay-Iwo" secondAttribute="height" multiplier="112:57" id="Fw4-lr-mug"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="turkey"/>
                                 <connections>
@@ -50,6 +59,9 @@
                             <constraint firstItem="HTQ-Jb-ati" firstAttribute="top" secondItem="hZE-BK-RHj" secondAttribute="bottom" constant="30" id="5Q9-Gw-7rF"/>
                             <constraint firstItem="hZE-BK-RHj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="5QC-Ie-9JL"/>
                             <constraint firstItem="HTQ-Jb-ati" firstAttribute="centerX" secondItem="hZE-BK-RHj" secondAttribute="centerX" id="9UJ-E4-lLK"/>
+                            <constraint firstItem="HTQ-Jb-ati" firstAttribute="height" secondItem="hZE-BK-RHj" secondAttribute="height" id="DRv-gv-D4X"/>
+                            <constraint firstItem="OGQ-ay-Iwo" firstAttribute="height" secondItem="HTQ-Jb-ati" secondAttribute="height" id="W8y-fd-1oR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="OGQ-ay-Iwo" secondAttribute="bottom" constant="20" id="X8B-zh-hiN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Oea-rA-jOs"/>
